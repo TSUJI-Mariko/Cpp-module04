@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 17:47:37 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/12/01 17:47:39 by mtsuji           ###   ########.fr       */
+/*   Created: 2022/12/01 17:56:29 by mtsuji            #+#    #+#             */
+/*   Updated: 2022/12/01 17:56:32 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef WrongCat_HPP
+#define WrongCat_HPP
 #include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include <iostream>
+#include <string>
 
-int main(void)
+class Cat : public Animal
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    public:
+        Cat(void);
+        Cat(const Cat &WrongCat);
+        virtual ~Cat(void);
+        Cat &operator =(Cat const &rhs);
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    return 0;
-}
+        void makeSound(void) const;
+    private:
+        Brain   *_brain;
+};
+
+#endif
+

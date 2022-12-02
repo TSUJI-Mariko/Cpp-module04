@@ -10,32 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../includes/Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal("Cat")
 {
-std::cout << "\033[31m" << "Cat Default constructor called"  << "\033[0m" << std::endl;
+    std::cout << "\033[31m" << "Cat Default constructor called"  << "\033[0m" << std::endl;
     return ;
 }
-Cat::Cat(const Cat &cat) : Animal(cat)
+
+Cat::Cat(const Cat &cat)
 {
-    std::cout << "\033[31m" << "Animal Copy constructor called"  << "\033[0m" << std::endl;
+    std::cout << "\033[31m" << "Cat Copy constructor called"  << "\033[0m" << std::endl;
     *this = cat;
     return ;
 }
+
 Cat::~Cat(void)
 {
     std::cout << "\033[31m" << "Cat Destructor called"  << "\033[0m" << std::endl;
     return ;
 }
+
 Cat & Cat::operator =(Cat const &cat)
 {
     std::cout << "\033[31m" << "Cat copy assignment operator called"  << "\033[0m" << std::endl;
     this->_type = cat._type;
     return *this;
 }
+
 void Cat::makeSound(void) const
 {
-    std::cout << "Cat says nothing!" << std::endl;
+    std::cout << "Cat has no sound" << std::endl;
     return ;
 }

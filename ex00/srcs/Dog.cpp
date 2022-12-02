@@ -12,12 +12,12 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("Dog")
 {
 std::cout << "\033[33m" << "Dog Default constructor called"  << "\033[0m" << std::endl;
     return ;
 }
-Dog::Dog(const Dog &dog) : Animal(dog)
+Dog::Dog(const Dog &dog)
 {
     std::cout << "\033[33m" << "Animal Copy constructor called"  << "\033[0m" << std::endl;
     *this = dog;

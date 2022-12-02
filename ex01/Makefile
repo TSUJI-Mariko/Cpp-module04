@@ -16,8 +16,7 @@ SRCS	=	./srcs/main.cpp			\
 			./srcs/Animal.cpp		\
 			./srcs/Cat.cpp			\
 			./srcs/Dog.cpp			\
-			./srcs/WrongCat.cpp		\
-			./srcs/WrongAnimal.cpp	\
+			./srcs/Brain.cpp		\
 
 HEADER	=	./includes
 
