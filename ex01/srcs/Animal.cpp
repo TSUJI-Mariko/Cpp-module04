@@ -50,7 +50,12 @@ void Animal::makeSound(void) const
     return ;
 }
 
-std::string    const & Animal::getType(void) const
+std::string    const Animal::getType(void) const
 {
     return (this->_type);
+}
+
+void   Animal::setType(std::string type)
+{
+    this->_type = type;
 }

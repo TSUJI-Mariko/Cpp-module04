@@ -13,6 +13,7 @@
 #ifndef WrongCat_HPP
 #define WrongCat_HPP
 #include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 #include <string>
 

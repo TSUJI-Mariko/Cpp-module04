@@ -24,12 +24,10 @@ class Brain
         virtual ~Brain(void);
         Brain &operator =(Brain const &brain);
 
-        virtual void makeSound(void) const;
         std::string    const &getIdea(void) const;
 
     protected:
         std::string _ideas[100];
 };
-
 
 #endif
