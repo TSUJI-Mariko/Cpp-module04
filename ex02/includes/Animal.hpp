@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtsuji <mtsuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 17:56:29 by mtsuji            #+#    #+#             */
-/*   Updated: 2022/12/01 17:56:32 by mtsuji           ###   ########.fr       */
+/*   Created: 2022/12/01 17:49:21 by mtsuji            #+#    #+#             */
+/*   Updated: 2022/12/01 17:49:26 by mtsuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-#include "Animal.hpp"
-#include "Brain.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 #include <iostream>
 #include <string>
 
-class Cat : public Animal
+class Animal
 {
     public:
-        Cat(void);
-        Cat(const Cat &Cat);
-        virtual ~Cat(void);
-        Cat &operator =(Cat const &rhs);
-        std::string const & getIdea(int const i) const;
-        void    setIdea(std::string idea, const int i);
-        void makeSound(void) const;
-    private:
-        Brain   *_brain;
+        Animal(void);
+        Animal(const Animal &animal);
+        Animal(std::string const &type);
+        virtual ~Animal(void);
+        Animal &operator =(Animal const &animal);
+
+        virtual void makeSound(void) const = 0;
+        std::string    const getType(void) const;
+        void    setType(std::string type);
+
+    protected:
+        std::string _type;
 };
 
 #endif
-

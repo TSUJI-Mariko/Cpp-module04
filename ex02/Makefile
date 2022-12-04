@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Brain
+NAME	= Abstraite
 
 SRCS	=	./srcs/main.cpp			\
 			./srcs/Animal.cpp		\
