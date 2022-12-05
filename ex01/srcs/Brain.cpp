@@ -15,6 +15,11 @@
 Brain::Brain(void)
 {
     std::cout << "\033[31m" << "Brain Default constructor called"  << "\033[0m" << std::endl;
+    int i;
+
+    i = -1;
+    while(++i < 100)
+        _ideas[i] = "nothing";
     return ;
 }
 
@@ -35,12 +40,9 @@ Brain & Brain::operator =(Brain const &brain)
     int i;
     if (this != &brain)
     {
-        i = 0;
-        while (i < 100)
-        {
+        i = -1;
+        while (++i < 100)
             this->_ideas[i] = brain._ideas[i];
-            i++;
-        }
     }
     return *this;
 }

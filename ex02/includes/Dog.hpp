@@ -12,21 +12,23 @@
 
 #ifndef DOG_HPP
 #define DOG_HPP
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 #include <iostream>
 #include <string>
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
     public:
         Dog(void);
         Dog(const Dog &dog);
         virtual ~Dog(void);
+        
         Dog &operator =(Dog const &dog);
+        void makeSound(void) const;
+        
         std::string  const & getIdea(int const i) const;
         void    setIdea(std::string idea, const int i);
-        void makeSound(void) const;
     
     private:
         Brain   *_brain;

@@ -37,10 +37,11 @@ void    my_test(void)
 	const Cat * B = new Cat();
 	std::cout << B->getType() << std::endl;;
 	B->makeSound();
-	const Animal * C = B;
+	const Animal * C = new Cat(*B);
 	C->makeSound();
 	delete A;
 	delete B;
+	delete C;
     std::cout << "------------------------------" << std::endl;
 }
 

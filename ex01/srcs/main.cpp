@@ -28,24 +28,28 @@ int main(void)
 			animal[i] = new Dog;
 		else
 			animal[i] = new Cat;
+		std::cout << "type: " << animal[i]->getType() << std::endl << std::endl;
 	}
 	i = -1;
     std::cout << "\033[34m" << "\n-------DESTRUCTION TEST-------" << "\033[0m" << std::endl;	
 	while (++i < 10)
 	{
 		std::cout << "animal [ " << i + 1 << " ]" << std::endl;
+		std::cout << "type: " << animal[i]->getType() << std::endl;
 		delete animal[i];
+		std::cout << std::endl;
 	}
 	std::cout << "\033[34m" << "\n---------OTHER TEST-----------" << "\033[0m" << std::endl;
-
 	Dog	*chibi = new Dog();
-	Cat	*tama = new Cat();
+	Cat	*tama = new Cat;
+	Cat *kitty = new Cat(*tama);
 
 	chibi->setIdea("I am Chibi", 0);
 	chibi->setIdea("I am hungry", 1);
 	tama->setIdea("Why my name is Tama?", 0);
 	tama->setIdea("My name is too basic in Japan", 1);
-	
+	kitty->setIdea("Hello kitty", 0);
+	kitty->setIdea("I'm most famous Japanese cat", 1);
 	std::cout << chibi->getType() << ": chibi :";
 	chibi->makeSound();
 	std::cout << chibi->getType() << ": chibi's idea : " << "\033[1m" << chibi->getIdea(0) << "\033[0m" << std::endl;
@@ -56,12 +60,17 @@ int main(void)
 	std::cout << tama->getType() << ": tama's idea  : " << "\033[1m" << tama->getIdea(0) << "\033[0m" << std::endl;
 	std::cout << tama->getType() << ": tama's idea  : " << "\033[1m" << tama->getIdea(1) << "\033[0m" << std::endl;
 	
+	std::cout << kitty->getType() << ": kitty :";
+	kitty->makeSound();
+	std::cout << kitty->getType() << ": kitty's idea : " << "\033[1m" << kitty->getIdea(0) << "\033[0m" << std::endl;
+	std::cout << kitty->getType() << ": kitty's idea : " << "\033[1m" << kitty->getIdea(1) << "\033[0m" << std::endl;
+
 	std::cout << "\033[32m" << "-----Chibi and Tama change their mind-----" << "\033[0m" << std::endl;
 	
 	chibi->setIdea("I want to talk with Tama", 0);
 	chibi->setIdea("But Tama don't like me", 1);
 	tama->setIdea("Why Chibi gaze me?", 0);
-	tama->setIdea("I want to sleep", 1);
+	tama->setIdea("I hate Hello kitty", 1);
 	
 	std::cout << chibi->getType() << ": chibi's idea : " << "\033[1m" << chibi->getIdea(0) << "\033[0m" << std::endl;
 	std::cout << chibi->getType()<< ": chibi's idea : " << "\033[1m" << chibi->getIdea(1) << "\033[0m" << std::endl;
@@ -70,6 +79,7 @@ int main(void)
 	
 	delete chibi;
 	delete tama;
+	delete kitty;
 	std::cout << "\033[34m" << "------------------------------" << "\033[0m" << std::endl << std::endl;
 	return 0;
 }

@@ -13,10 +13,12 @@
 NAME	= Abstraite
 
 SRCS	=	./srcs/main.cpp			\
-			./srcs/Animal.cpp		\
+			./srcs/AAnimal.cpp		\
 			./srcs/Cat.cpp			\
 			./srcs/Dog.cpp			\
 			./srcs/Brain.cpp		\
+			./srcs/WrongAnimal.cpp	\
+			./srcs/WrongCat.cpp		\
 
 HEADER	=	./includes
 

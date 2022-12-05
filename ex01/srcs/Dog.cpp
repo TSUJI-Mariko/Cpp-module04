@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../includes/Dog.hpp"
 
-Dog::Dog(void) : Animal()
+Dog::Dog(void) : Animal("Dog")
 {
     std::cout << "\033[33m" << "Dog Default constructor called"  << "\033[0m" << std::endl;
     this->_brain = new Brain();
-    this->_type = "Dog";
     return ;
 }
 
@@ -24,7 +23,6 @@ Dog::Dog(Dog const &dog) : Animal(dog)
 {
     std::cout << "\033[33m" << "Animal Copy constructor called"  << "\033[0m" << std::endl;
     this->_brain = new Brain();
-    this->_type = "Dog";
     *this = dog;
     return ;
 }

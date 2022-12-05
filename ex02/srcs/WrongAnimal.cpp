@@ -12,7 +12,7 @@
 
 #include "../includes/WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) : _type("WrongAnimal")
+WrongAnimal::WrongAnimal(void)
 {
     std::cout << "\033[32m" << "WrongAnimal Default constructor called"  << "\033[0m" << std::endl;
     return ;

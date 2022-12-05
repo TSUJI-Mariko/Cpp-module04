@@ -12,11 +12,10 @@
 
 #include "../includes/Cat.hpp"
 
-Cat::Cat(void) : Animal()
+Cat::Cat(void) : Animal("Cat")
 {
     std::cout << "\033[36m" << "Cat Default constructor called"  << "\033[0m" << std::endl;
     this->_brain = new Brain();
-    this->_type = "Cat";
     return ;
 }
 
@@ -24,7 +23,6 @@ Cat::Cat(const Cat &cat) : Animal(cat)
 {
     std::cout << "\033[36m" << "Cat Copy constructor called"  << "\033[0m" << std::endl;
     this->_brain = new Brain();
-    this->_type = "Cat";
     *this = cat;
     return ;
 }

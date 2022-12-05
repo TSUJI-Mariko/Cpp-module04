@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msuji <mtsuji@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/02 17:08:12 by msuji             #+#    #+#             */
-/*   Updated: 2022/12/02 17:08:13 by msuji            ###   ########.fr       */
+/*   Created: 2022/12/02 12:07:12 by msuji             #+#    #+#             */
+/*   Updated: 2022/12/02 12:07:14 by msuji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-#define BRAIN_HPP
-#include <string>
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
+#include "WrongAnimal.hpp"
 #include <iostream>
+#include <string>
 
-class Brain
+class WrongCat : public WrongAnimal
 {
     public:
-        Brain(void);
-        Brain(const Brain &brain);
-        ~Brain(void);
-        Brain &operator =(Brain const &brain);
+        WrongCat(void);
+        WrongCat(const WrongCat &wrongCat);
+        ~WrongCat(void);
+        WrongCat &operator =(WrongCat const &wrongCat);
 
-        std::string    const & getIdeas(int const i) const;
-        void    setIdeas(std::string idea, int const i);
-
-    protected:
-        std::string _ideas[100];
+        void makeSound(void) const;
 };
 
 #endif
